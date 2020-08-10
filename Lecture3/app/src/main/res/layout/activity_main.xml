@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    
+
 <!--    <ImageView-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
@@ -14,32 +14,38 @@
 <!--        android:layout_weight="1"-->
 <!--        android:cropToPadding="true" />-->
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
         android:background="@color/colorAccent"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:layout_weight="1"
         android:text="Head"
         android:textSize="20sp" />
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:background="@color/colorPrimary"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:layout_weight="2"
         android:textColor="#fff"
         android:text="Middle"
         android:textSize="20sp" />
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/txtBottom"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:background="@color/colorAccent"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:layout_weight="1"
         android:text="Bottom"
         android:textSize="20sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/txtBottom"
+        android:background="@color/colorAccent"
+        android:text="NewBottom"
+        android:textSize="20sp" />
 
-</LinearLayout>
+</RelativeLayout>
