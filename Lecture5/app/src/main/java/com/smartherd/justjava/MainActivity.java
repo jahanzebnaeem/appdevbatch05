@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 public class MainActivity extends AppCompatActivity {
     int quantity = 2;
 
@@ -16,7 +18,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void decrement(View view) {
-        quantity = quantity - 1;
+        if(quantity <= 0) {
+            quantity = 0;
+        } else {
+            quantity = quantity - 1;
+        }
         displayOrderOfCoffee(quantity);
     }
 
@@ -27,10 +33,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateNumberOfCoffee(View view) {
         displayOrderOfCoffee(quantity);
+        Double d = Double.valueOf(quantity);
+        displayCalculatedPrice(d * 0.18);
     }
 
     private void displayOrderOfCoffee(int val) {
-        TextView ordedQuantity = (TextView) findViewById(R.id.number_of_coffee);
-        ordedQuantity.setText("" + val);
+        TextView orderdQuantity = (TextView) findViewById(R.id.number_of_coffee);
+        orderdQuantity.setText("" + val);
+    }
+
+    private void displayCalculatedPrice(double price) {
+        TextView orderPrice = (TextView) findViewById(R.id.ordered_price);
+        orderPrice.setText(NumberFormat.getCurrencyInstance().format(price));
     }
 }
