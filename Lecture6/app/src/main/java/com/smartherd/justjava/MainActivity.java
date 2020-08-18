@@ -32,9 +32,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateNumberOfCoffee(View view) {
-        displayOrderOfCoffee(quantity);
         Double d = Double.valueOf(quantity);
-        displayCalculatedPrice(d * 0.18);
+//        displayCalculatedPrice(d * 0.18);
+        String message = "Total: " + convertToCurrency(d * 0.18);
+        message = message + "\nThank you!";
+        displayMessage(message);
     }
 
     private void displayOrderOfCoffee(int val) {
@@ -45,5 +47,14 @@ public class MainActivity extends AppCompatActivity {
     private void displayCalculatedPrice(double price) {
         TextView orderPrice = (TextView) findViewById(R.id.ordered_price);
         orderPrice.setText(NumberFormat.getCurrencyInstance().format(price));
+    }
+
+    private String convertToCurrency(double price) {
+        return NumberFormat.getCurrencyInstance().format(price);
+    }
+
+    private void displayMessage(String message) {
+        TextView orderdPrice = (TextView) findViewById(R.id.ordered_price);
+        orderdPrice.setText(message);
     }
 }
