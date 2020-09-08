@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -15,9 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     private LayoutInflater layoutInflater;
-    private List<String> data;
+    private List<Model> data;
 
-    public Adapter(Context context, List<String> data) {
+    public Adapter(Context context, List<Model> data) {
         this.layoutInflater = LayoutInflater.from(context);
         this.data = data;
     }
@@ -32,8 +34,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
         // Bind data
-        String albumName = data.get(position);
-        holder.album_name.setText(albumName);
+        String albumTitle = data.get(position).albumTitle;
+        String artistName = data.get(position).artistName;
+        String albumUrl = data.get(position).albumUrl;
+        String artistUrl = data.get(position).artistUrl;
+        String btnUrl = data.get(position).btnUrl;
+
+        holder.album_name.setText(albumTitle);
+        holder.artist_name.setText(artistName);
+        Picasso.get().load(albumUrl).into(holder.album_image);
+        Picasso.get().load(artistUrl).into(holder.artist_image);
     }
 
     @Override
