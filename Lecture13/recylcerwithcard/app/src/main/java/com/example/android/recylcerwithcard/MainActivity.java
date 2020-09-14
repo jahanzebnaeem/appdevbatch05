@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         model.setArtistName(obj.getString("artist"));
                         model.setAlbumUrl(obj.getString("image"));
                         model.setArtistUrl(obj.getString("thumbnail_image"));
+                        model.setBtnUrl(obj.getString("url"));
 
                         models.add(model);
 

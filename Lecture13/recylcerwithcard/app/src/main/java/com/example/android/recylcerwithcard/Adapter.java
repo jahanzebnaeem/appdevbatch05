@@ -1,6 +1,8 @@
 package com.example.android.recylcerwithcard;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +20,10 @@ import androidx.recyclerview.widget.RecyclerView;
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     private LayoutInflater layoutInflater;
     private List<Model> data;
+    private Context context;
 
     public Adapter(Context context, List<Model> data) {
+        this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
         this.data = data;
     }
@@ -38,12 +42,22 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         String artistName = data.get(position).artistName;
         String albumUrl = data.get(position).albumUrl;
         String artistUrl = data.get(position).artistUrl;
-        String btnUrl = data.get(position).btnUrl;
+        final String btnUrl = data.get(position).btnUrl;
 
         holder.album_name.setText(albumTitle);
         holder.artist_name.setText(artistName);
         Picasso.get().load(albumUrl).into(holder.album_image);
         Picasso.get().load(artistUrl).into(holder.artist_image);
+        holder.buy_now.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setData(Uri.parse(btnUrl));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
