@@ -121,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
         final Button buttonUpdate = dialogView.findViewById(R.id.buttonUpdate);
         final Spinner spinnerGenres = dialogView.findViewById(R.id.spinnerGenres);
 
+        final Button buttonDelete = dialogView.findViewById(R.id.buttonDelete);
+
         dialogBuilder.setTitle("Update Artist " + artistName);
 
         final AlertDialog alertDialog = dialogBuilder.create();
@@ -142,6 +144,23 @@ public class MainActivity extends AppCompatActivity {
                 alertDialog.dismiss();
             }
         });
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteArtist(artistId);
+            }
+        });
+    }
+
+    private void deleteArtist(String artistId) {
+        DatabaseReference dbArtist = FirebaseDatabase.getInstance().getReference("artists").child(artistId);
+        DatabaseReference dbTract = FirebaseDatabase.getInstance().getReference("tracks").child(artistId);
+
+        dbArtist.removeValue();
+        dbTract.removeValue();
+
+        Toast.makeText(this, "Artist is deleted", Toast.LENGTH_LONG).show();
     }
 
     private boolean updateArtist(String id, String name, String genre) {

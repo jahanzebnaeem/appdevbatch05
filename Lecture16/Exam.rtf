@@ -11,7 +11,8 @@
 \f0\b\fs70 \cf0 Final Exam NexSkill - App Dev Batch 05
 \fs30 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf0 Note: Q1-7 needs to be submitted by 10 PM tonight. Timeline for Q8 is already mentioned below.\
+\cf0 \
+Note: Q1-7 needs to be submitted by 10 PM tonight. Timeline for Q8 is already mentioned below.\
 \
 Question 1:
 \f1\b0  Difference between AsyncTasks & Threads? Create a small app to demonstrate it.\
@@ -30,44 +31,45 @@ Question 1:
 \pard\pardeftab720\partightenfactor0
 
 \f2\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Intent sendIntent = new Intent();\
+Intent sendIntent = new Intent();\
     sendIntent.setAction(Intent.ACTION_SEND);\
     sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);\
     sendIntent.setType(HTTP.PLAIN_TEXT_TYPE); // "text/plain" MIME type\
     startActivity(sendIntent);
-\f3\b\fs52 \cf4 \cb5 \strokec4 \
+\f3\b\fs52 \cf4 \cb5 \
 
-\f0\fs30 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Question 6: 
+\f0\fs30 \cf0 \cb1 \kerning1\expnd0\expndtw0 Question 6: 
 \f1\b0 Which of the code snippets below is the correct way to check if a Compass sensor is present on the system? Explain your answer.\
 Answer 1\
 \pard\pardeftab720\partightenfactor0
 
 \f2\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec6 PackageManager m = getPackageManager();\
+PackageManager m = getPackageManager();\
     if (!m.hasSystemFeature(PackageManager.FEATURE_SENSOR_COMPASS)) \{\
         // This device does not have a compass, turn off the compass feature\
     \}\
 
-\f1\fs30 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Answer 2
+\f1\fs30 \cf0 \cb1 \kerning1\expnd0\expndtw0 Answer 2
 \f2\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec6 \
+\
 \pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 SensorManager m = getSensorManager();\
+\cf2 \cb3 SensorManager m = getSensorManager();\
     if (!m.hasSystemFeature(SensorManager.FEATURE_SENSOR_COMPASS)) \{\
         // This device does not have a compass, turn off the compass feature\
-    \}\cf6 \cb7 \strokec6 \
-
-\f1\fs30 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Answer 3\
+    \}\cf6 \cb7 \
 \pard\pardeftab720\partightenfactor0
 
+\f1\fs30 \cf0 \cb1 \kerning1\expnd0\expndtw0 Answer 3\
+
 \f2\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec6 Sensor s = getSensor();\
+Sensor s = getSensor();\
     if (!s.hasSystemFeature(Sensor.FEATURE_SENSOR_COMPASS)) \{\
         // This device does not have a compass, turn off the compass feature\
     \}\
 \
+\pard\pardeftab720\partightenfactor0
 
-\f0\b\fs30 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Question 7: 
+\f0\b\fs30 \cf0 \cb1 \kerning1\expnd0\expndtw0 Question 7: 
 \f1\b0 Describe three common use cases for using an Intent.\
 
 \f0\b Question 8: 
