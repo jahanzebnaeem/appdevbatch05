@@ -30,7 +30,7 @@
         android:entries="@array/genres"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextName"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextName"/>
 
     <Button
         android:id="@+id/buttonAddArtist"
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerGenres" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerGenres" />
 
     <ListView
         android:id="@+id/listViewArtists"
@@ -54,6 +54,6 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonAddArtist" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddArtist" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

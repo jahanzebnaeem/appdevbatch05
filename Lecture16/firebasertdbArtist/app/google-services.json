@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "663351469460",
+    "firebase_url": "https://fir-rtdb-artist.firebaseio.com",
+    "project_id": "fir-rtdb-artist",
+    "storage_bucket": "fir-rtdb-artist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663351469460:android:0c24a023dd30d11636db81",
+        "android_client_info": {
+          "package_name": "com.example.android.firebasertdbartist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663351469460-ju2vtg231g4jp6vhh0ju6h79eptpmpt7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.firebasertdbartist",
+            "certificate_hash": "5c76f0d94b5d2e20a919ebab1b7137b1fccc81ea"
+          }
+        },
+        {
+          "client_id": "663351469460-5ng5tkebkpurp5oos5nlcipbh2fbvj1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtD9H9QOLjXFJN3UewghRsRJ0w26BDD5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663351469460-5ng5tkebkpurp5oos5nlcipbh2fbvj1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
